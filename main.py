@@ -36,8 +36,8 @@ def main():
         result = find_mismatch(text)
         print(result)
     elif ievade.lower() == "f":
-        filename = input("Enter file name: ")
-        with open(filename, "r") as f:
+        file = input("Enter file name: ")
+        with open(file, "r") as f:
             text = f.read().strip()
             result = find_mismatch(text)
             print(result)
