@@ -20,10 +20,10 @@ def find_mismatch(text):
 
             if len(opening_brackets_stack)==0 
             or not are_matching(opening_brackets_stack[-1].char,next_char):
-            return i+1                             
+             return i+1                             
             opening_brackets_stack.pop()
             if len(opening_brackets_stack) > 0:
-            return opening_brackets_stack[0].position
+             return opening_brackets_stack[0].position
             else: 
                 return "Success"
             #pass
@@ -41,7 +41,6 @@ def main():
             text = f.read().strip()
             result = find_mismatch(text)
             print(result)
-    else:
-        print("Invalid choice")
+
 if __name__ == "__main__":
     main()
