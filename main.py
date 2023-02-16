@@ -16,7 +16,7 @@ def find_mismatch(text):
             opening_brackets_stack.append(Bracket(next_char, i+1)
             #pass
 
-        if next in ")]}":
+        elif next in ")]}":
 
             if len(opening_brackets_stack)==0 
             or not are_matching(opening_brackets_stack[-1].char,next_char):
@@ -30,7 +30,18 @@ def find_mismatch(text):
 
 
 def main():
-    ievade = input("Input-I, File-F")
-    if ievade.lower() == "f":                                                                           
-    text = input("")                                      
-    mismatch = find_mismatch(text)
+    ievade = input("Enter I for input or F for files: ")
+    if ievade.lower() == "i":
+        text = input("Enter text: ")
+        result = find_mismatch(text)
+        print(result)
+    elif ievade.lower() == "f":
+        filename = input("Enter file name: ")
+        with open(filename, "r") as f:
+            text = f.read().strip()
+            result = find_mismatch(text)
+            print(result)
+    else:
+        print("Invalid choice")
+if __name__ == "__main__":
+    main()
