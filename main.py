@@ -25,13 +25,13 @@ def find_mismatch(text):
         return "Success"
         
 def main():
-    ievade = input("Enter I for input or F for files: ")
-    if ievade.lower() == "i":
-        text = input("Enter text: ")
+    ievade = input("")
+    if "i" in ievade.lower():
+        text = input("")
         result = find_mismatch(text)
         print(result)
-    elif ievade.lower() == "f":
-        file = input("Enter file name: ")
+    elif "f" in ievade.lower():
+        file = input("")
         with open(file, "r") as f:
             text = f.read().strip()
             result = find_mismatch(text)
